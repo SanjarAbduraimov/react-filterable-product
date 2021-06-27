@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import { UserProvider } from './userContex';
+const products = [
+  { name: "olma", price: 2000, inStock: true },
+  { name: "anor", price: 4000, inStock: true },
+  { name: "banan", price: 25000, inStock: false },
+  { name: "olcha", price: 5000, inStock: true },
+  { name: "o'rik", price: 10000, inStock: true },
+  { name: "apilsin", price: 20000, inStock: false },
+];
 ReactDOM.render(
-  <React.StrictMode>
+  <UserProvider value={products}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </UserProvider>,
+  document.getElementById('root'));
